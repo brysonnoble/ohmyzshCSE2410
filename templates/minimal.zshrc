@@ -1,5 +1,6 @@
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"
-plugins=(git)
+INPUT_THEME="robbyrussel"
+ZSH_THEME="${(L)INPUT_THEME}"
 
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
