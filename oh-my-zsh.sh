@@ -227,6 +227,7 @@ if [[ -n "$ZSH_THEME" ]]; then
     source "$ZSH/themes/$ZSH_THEME.zsh-theme"
   else
     echo "[oh-my-zsh] theme '$ZSH_THEME' not found"
+    source "$ZSH/themes/robbyrussell.zsh-theme"
   fi
 fi
 
