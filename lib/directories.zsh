@@ -5,7 +5,6 @@ setopt pushd_ignore_dups
 setopt pushdminus
 
 
-alias  ...='../..'
 alias -g ....='../../..'
 alias -g .....='../../../..'
 alias -g ......='../../../../..'
@@ -32,6 +31,21 @@ function d () {
   fi
 }
 compdef _dirs d
+
+# Fix ... wildcard
+
+function ...() {
+  builtin cd ../..
+}
+
+function cd() {
+  if [[ $1 == '...' ]]; then
+    shift
+    builtin cd ../.. "$@"
+  else
+    builtin cd "$@"
+  fi
+}
 
 # List directory contents
 alias lsa='ls -lah'
